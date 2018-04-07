@@ -30,6 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.4.0.0.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,7 +48,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ImporterTransactionsCommandHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AAS.Core.Contracts\AAS.Core.Contracts.csproj">
+      <Project>{F2AF27FB-1D5A-40C7-8805-79838A774E07}</Project>
+      <Name>AAS.Core.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AAS.ExternalService.Aliorbank\AAS.ExternalService.Aliorbank.csproj">
+      <Project>{CC2C5BFC-E81B-48B0-9832-A945BF264CFB}</Project>
+      <Name>AAS.ExternalService.Aliorbank</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AAS.Persistance\AAS.Persistance.csproj">
+      <Project>{87b12e09-509f-40d4-a052-5e41d48616e0}</Project>
+      <Name>AAS.Persistance</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

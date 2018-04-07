@@ -73,10 +73,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="ReadingFromCSVImportedTransactionsSet_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reading_From_Database.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="_CSV\export20171231152650.csv" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +89,10 @@
     <ProjectReference Include="..\AAS.ExternalService.Aliorbank\AAS.ExternalService.Aliorbank.csproj">
       <Project>{CC2C5BFC-E81B-48B0-9832-A945BF264CFB}</Project>
       <Name>AAS.ExternalService.Aliorbank</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AAS.Persistance\AAS.Persistance.csproj">
+      <Project>{87b12e09-509f-40d4-a052-5e41d48616e0}</Project>
+      <Name>AAS.Persistance</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

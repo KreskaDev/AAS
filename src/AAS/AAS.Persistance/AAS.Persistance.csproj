@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F2AF27FB-1D5A-40C7-8805-79838A774E07}</ProjectGuid>
+    <ProjectGuid>{87B12E09-509F-40D4-A052-5E41D48616E0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AAS.Core.Contracts</RootNamespace>
-    <AssemblyName>AAS.Core.Contracts</AssemblyName>
+    <RootNamespace>AAS.Persistance</RootNamespace>
+    <AssemblyName>AAS.Persistance</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -52,23 +52,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\BankAccount.cs" />
-    <Compile Include="Model\BankTransaction.cs" />
-    <Compile Include="IBankService.cs" />
-    <Compile Include="Model\Vo\Money.cs" />
-    <Compile Include="Model\Dictionaries\TransactionBucketType.cs" />
-    <Compile Include="Model\Vo\TransactionInfo.cs" />
+    <Compile Include="Model\EntityId.cs" />
+    <Compile Include="Relations\IEntity.cs" />
+    <Compile Include="Core\NhSessionProvider.cs" />
+    <Compile Include="Model\Entity.cs" />
+    <Compile Include="Core\DataBasePersister.cs" />
+    <Compile Include="Configuration\DebugWriter.cs" />
+    <Compile Include="Relations\IHierarchyRoot.cs" />
+    <Compile Include="Core\MappingTemplate.cs" />
+    <Compile Include="Configuration\ModelAutomappingConfiguration.cs" />
+    <Compile Include="Configuration\MssqlDataBasePersister.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AAS.Persistance\AAS.Persistance.csproj">
-      <Project>{87B12E09-509F-40D4-A052-5E41D48616E0}</Project>
-      <Name>AAS.Persistance</Name>
-    </ProjectReference>
+    <Compile Include="Model\ValueObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AAS.Common\AAS.Common.csproj">
+      <Project>{818A4DF6-D1E3-4310-AA59-4DBFA8C54976}</Project>
+      <Name>AAS.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
